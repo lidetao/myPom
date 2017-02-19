@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.ldt</groupId>
+		<artifactId>myPom</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>my-api-impl</artifactId>
+
+	<dependencies>
+
+		<!-- =====业务包===== -->
+		<dependency>
+			<groupId>com.ldt</groupId>
+			<artifactId>my-api</artifactId>
+		</dependency>
+		<!-- //=====业务包===== -->
+
+		<!-- =====基础包===== -->
+		<!-- 单元测试 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- 日志 -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<!-- //=====基础包===== -->
+
+	</dependencies>
+
+	<build>
+
+		<plugins>
+			<!-- 编译器 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source> <!-- 源代码使用的开发版本 -->
+					<target>1.8</target> <!-- 需要生成的目标class文件的编译版本 -->
+				</configuration>
+			</plugin>
+			<!-- eclipse -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<downloadSources>false</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+				</configuration>
+			</plugin>
+		</plugins>
+
+		<testResources></testResources>
+		<resources></resources>
+
+	</build>
+
+</project>
